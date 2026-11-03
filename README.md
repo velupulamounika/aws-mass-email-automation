@@ -40,28 +40,14 @@ Velupula Mounika
 
 
 
-
 ## 🏗️ AWS Architecture
 
-```text
-Recipient CSV File
-       |
-       v
-   Amazon S3
-       |
-       | S3 Event Trigger
-       v
-   AWS Lambda
-   (Python)
-       |
-       v
-   Amazon SES
-       |
-       v
-  Email Delivery
-
-Amazon CloudWatch
-(Monitors Lambda Logs)
+```mermaid
+flowchart TD
+    A["Recipient CSV File"] --> B["Amazon S3"]
+    B -->|"S3 Event Trigger"| C["AWS Lambda - Python"]
+    C -->|"Read CSV and process recipients"| D["Amazon SES"]
+    D --> E["Email Delivery"]
+    C --> F["Amazon CloudWatch"]
+    G["AWS IAM Role"] -.-> C
 ```
-
-
