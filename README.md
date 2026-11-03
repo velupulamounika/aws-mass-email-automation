@@ -38,3 +38,30 @@ AWS Cloud, Serverless Computing, Python, IAM, Event-Driven Automation and Cloud 
 ## 👩‍💻 Author
 Velupula Mounika
 
+
+
+
+## 🏗️ AWS Architecture
+
+```text
+Recipient CSV File
+       |
+       v
+   Amazon S3
+       |
+       | S3 Event Trigger
+       v
+   AWS Lambda
+   (Python)
+       |
+       v
+   Amazon SES
+       |
+       v
+  Email Delivery
+
+Amazon CloudWatch
+(Monitors Lambda Logs)
+```
+
+
